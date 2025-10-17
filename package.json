@@ -1,14 +1,14 @@
 {
-  "homepage": "https://luisillo98bc.github.io/ToursPersonalizados1",
+  "homepage": "https://luisillo98bc.github.io/ToursPersonalizados1/",
   "name": "tourspersonalizados1",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist",
     "dev": "vite",
     "build": "vite build",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist",
     "lint": "eslint .",
     "preview": "vite preview"
   },
