@@ -44,7 +44,7 @@ export const packages = [
       {
         title: "Parque constitucion",
         description:
-          "Recepción en el terminal, traslado al hotel y recorrido por el centro histórico de Oxapampa.",
+          "Recepción en el terminal, traslado al hotel y recorrido por el centro histórico de huancayo.",
         image: constitucion,
       },
       {
