@@ -12,7 +12,7 @@ const Home = () => {
     <div>
       {/* Hero Section */}
       
-          <Hero/>
+      <Hero/>
       {/* Featured Packages */}
       <Bienvenida/>
       <section className="py-16 bg-gray-50">

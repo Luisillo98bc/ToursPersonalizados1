@@ -10,7 +10,7 @@ const Tours = () => {
       <div className="max-w-7xl mx-auto px-4">
         <h1 className="text-4xl font-bold text-center mb-4">Nuestros Tours</h1>
         <p className="text-xl text-center text-gray-600 mb-12">
-          Explora los mejores destinos y actividades en Oxapampa y sus
+          Explora los mejores destinos y actividades en el valle del mantaro y sus
           alrededores
         </p>
 
