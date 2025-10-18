@@ -23,6 +23,13 @@ import sanjero from "../assets/jeronimo.JPG";
 import bosque from "../assets/bosque.jpg"
 import huamanhuata from "../assets/huamanhuata.jpg"
 
+import comida from "../assets/comida.jpg"
+import sapalla from "../assets/sapalla.jpg"
+import conce from "../assets/conce.jpg"
+import neva2 from "../assets/neva2.avif"
+import shujtooo from "../assets/shujtoo.jpg"
+import mantaro from "../assets/mantaro.jpg"
+
 
 export const packages = [
   {
@@ -191,7 +198,7 @@ export const packages = [
     price: 100,
     duration: "1 dia",
     category: "aventura",
-    image: "/images/package-4.jpg",
+    image: mantaro,
     includes: [
       "Transporte ida y vuelta",
       "Visita a todos los lugares mensionados",
@@ -244,7 +251,7 @@ export const packages = [
     price: 100,
     duration: "1 dia",
     category: "Familiar",
-    image: "/images/package-5.jpg",
+    image: shujtooo,
     includes: [
       "Transporte ida y vuelta",
       "Visita a todos los lugares mensionados",
@@ -292,7 +299,7 @@ export const packages = [
     price: 200,
     duration: "1 dia",
     category: "Aventura Extrema",
-    image: "/images/package-6.jpg",
+    image: neva2,
     includes: [
       "Transporte ida y vuelta",
       "Visita a todos los lugares mensionados",
@@ -391,7 +398,7 @@ export const tours = [
     price: 60,
     duration: "Medio dia",
     difficulty: "Fácil",
-    image: "/images/tour-3.jpg",
+    image: conce,
     includes: [
       "Transporte ida y vuelta",
       "Guía especializado en historia",
@@ -412,7 +419,7 @@ export const tours = [
     price: 40,
     duration: "2 horas",
     difficulty: "Fácil",
-    image: "/images/tour-2.jpg",
+    image: sapalla,
     includes: ["Guía turístico", "Recorrido a pie"],
     highlights: [
       "paseo por el centro turistico",
@@ -429,7 +436,7 @@ export const tours = [
     price: 70,
     duration: "4 horas",
     difficulty: "Fácil",
-    image: "/images/tour-6.jpg",
+    image: comida,
     includes: [
       "Guía gastronómico",
       "Degustaciones en 5 lugares",

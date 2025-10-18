@@ -47,17 +47,17 @@ const Navbar = () => {
     <>
       {/* NAVBAR SUPERIOR */}
       <nav
-        className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
+        className={`fixed top-0 left-0 w-full z-50 h-auto transition-all duration-300 ${
           scrolled
             ? "backdrop-blur-md bg-white/70 shadow-md"
             : "bg-white/90 backdrop-blur-sm"
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-16">
+          <div className="flex justify-between items-center h-25">
             {/* Logo */}
             <Link to="/" className="flex-shrink-0" onClick={closeMenu}>
-            <img src={logo} alt="" width={90} />
+            <img src={logo} alt="" width={170} />
               
             </Link>
 
@@ -67,7 +67,7 @@ const Navbar = () => {
                 <div key={link.name} className="relative group">
                   <Link
                     to={link.path}
-                    className={`pb-1 transition-colors duration-200 text-sm font-medium ${
+                    className={`pb-1 transition-colors duration-200 text-base font-medium ${
                       isActive(link.path)
                         ? "text-primary font-semibold"
                         : "text-gray-700 hover:text-primary"

@@ -11,10 +11,10 @@ const Home = () => {
   return (
     <div>
       {/* Hero Section */}
-      
-      <Hero/>
+
+      <Hero />
       {/* Featured Packages */}
-      <Bienvenida/>
+      <Bienvenida />
       <section className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4">
           <h2 className="text-3xl font-bold text-center mb-12">
@@ -24,18 +24,18 @@ const Home = () => {
             {featuredPackages.map((pkg) => (
               <div
                 key={pkg.id}
-                className="bg-white rounded-lg shadow-lg overflow-hidden"
+                className="group bg-white rounded-lg shadow-lg overflow-hidden"
               >
                 <img
                   src={pkg.image}
                   alt={pkg.title}
-                  className="w-full h-48 object-cover"
+                  className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500"
                 />
                 <div className="p-6">
                   <h3 className="text-xl font-bold mb-2">{pkg.title}</h3>
                   <p className="text-gray-600 mb-4">{pkg.description}</p>
                   <div className="flex justify-between items-center">
-                    <span className="text-primary font-bold">${pkg.price}</span>
+                    <span className="text-primary font-bold">S/{pkg.price}</span>
                     <Link
                       to={`/paquetes/${pkg.id}`}
                       className="bg-secondary hover:bg-yellow-600 text-white px-4 py-2 rounded"
@@ -68,19 +68,19 @@ const Home = () => {
             {featuredTours.map((tour) => (
               <div
                 key={tour.id}
-                className="bg-white rounded-lg shadow-lg overflow-hidden"
+                className="group bg-white rounded-lg shadow-lg overflow-hidden"
               >
                 <img
                   src={tour.image}
                   alt={tour.title}
-                  className="w-full h-48 object-cover"
+                  className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500"
                 />
                 <div className="p-6">
                   <h3 className="text-xl font-bold mb-2">{tour.title}</h3>
                   <p className="text-gray-600 mb-4">{tour.description}</p>
                   <div className="flex justify-between items-center">
                     <span className="text-primary font-bold">
-                      ${tour.price}
+                      S/{tour.price}
                     </span>
                     <Link
                       to={`/tours/${tour.id}`}
@@ -121,7 +121,6 @@ const Home = () => {
           </Link>
         </div>
       </section>
-      
     </div>
   );
 };

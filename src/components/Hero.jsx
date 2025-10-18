@@ -23,7 +23,7 @@ const Hero = () => {
   }, [images.length]);
 
   return (
-    <div className="relative  h-[90vh] overflow-hidden w-[98%] m-auto rounded-2xl">
+    <div className="relative  h-[64vh] overflow-hidden w-[94%] m-auto rounded-4xl mt-[100px]">
       {/* Imagen de fondo */}
       <div
         className="absolute inset-0 transition-opacity duration-1000"

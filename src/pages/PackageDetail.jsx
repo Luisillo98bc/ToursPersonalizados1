@@ -21,7 +21,7 @@ const PackageDetail = () => {
   }
 
   return (
-    <div className="py-15 bg-white min-h-screen">
+    <div className="py-5 mt-[100px] bg-white min-h-screen">
       <div className="max-w-4xl mx-auto px-4">
         <Link
           to="/paquetes"

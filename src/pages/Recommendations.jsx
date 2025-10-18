@@ -41,14 +41,14 @@ const Recommendations = () => {
   ];
 
   return (
-    <div className="py-15 bg-gray-50 min-h-screen">
+    <div className="py-5 mt-[100px] bg-gray-50 min-h-screen">
       <div className="max-w-7xl mx-auto px-4">
         <h1 className="text-4xl font-bold text-center mb-4">
           Recomendaciones para tu Viaje
         </h1>
         <p className="text-xl text-center text-gray-600 mb-12">
-          Consejos útiles para que disfrutes al máximo tu experiencia en
-          el valle del mantaro
+          Consejos útiles para que disfrutes al máximo tu experiencia en el
+          valle del mantaro
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">

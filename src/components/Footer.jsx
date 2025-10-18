@@ -27,24 +27,27 @@ const Footer = () => {
             <h4 className="text-lg font-bold mb-4">Enlaces rápidos</h4>
             <ul className="space-y-2">
               <li>
-                <Link to="/" className="text-gray-300 hover:text-white">
+                <Link to="/" className="text-gray-300 hover:text-primary">
                   Inicio
                 </Link>
               </li>
               <li>
-                <Link to="/paquetes" className="text-gray-300 hover:text-white">
+                <Link
+                  to="/paquetes"
+                  className="text-gray-300 hover:text-primary"
+                >
                   Paquetes
                 </Link>
               </li>
               <li>
-                <Link to="/tours" className="text-gray-300 hover:text-white">
+                <Link to="/tours" className="text-gray-300 hover:text-primary">
                   Tours
                 </Link>
               </li>
               <li>
                 <Link
                   to="/recomendaciones"
-                  className="text-gray-300 hover:text-white"
+                  className="text-gray-300 hover:text-primary"
                 >
                   Recomendaciones
                 </Link>
@@ -56,22 +59,28 @@ const Footer = () => {
             <h4 className="text-lg font-bold mb-4">Más información</h4>
             <ul className="space-y-2">
               <li>
-                <Link to="/nosotros" className="text-gray-300 hover:text-white">
+                <Link
+                  to="/nosotros"
+                  className="text-gray-300 hover:text-primary"
+                >
                   Nosotros
                 </Link>
               </li>
               <li>
-                <Link to="/contacto" className="text-gray-300 hover:text-white">
+                <Link
+                  to="/contacto"
+                  className="text-gray-300 hover:text-primary"
+                >
                   Contacto
                 </Link>
               </li>
               <li>
-                <a href="#" className="text-gray-300 hover:text-white">
+                <a href="#" className="text-gray-300 hover:text-primary">
                   Términos y condiciones
                 </a>
               </li>
               <li>
-                <a href="#" className="text-gray-300 hover:text-white">
+                <a href="#" className="text-gray-300 hover:text-primary">
                   Política de privacidad
                 </a>
               </li>

@@ -2,7 +2,7 @@ import React from "react";
 import nosotros from "../assets/nosotros.jpg"
 const About = () => {
   return (
-    <div className="py-15 bg-white min-h-screen">
+    <div className="py-5 mt-[100px] bg-white min-h-screen">
       <div className="max-w-4xl mx-auto px-4">
         <h1 className="text-4xl font-bold text-center mb-8">Sobre Nosotros</h1>
 
