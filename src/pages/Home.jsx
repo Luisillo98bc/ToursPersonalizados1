@@ -4,6 +4,7 @@ import { packages, tours } from "../data/data";
 import portada from "../assets/portada.jpg";
 import Hero from "../components/Hero";
 import Bienvenida from "../components/Bienvenida";
+import Experiencias from "../components/Experiencias";
 const Home = () => {
   const featuredPackages = packages.slice(0, 3);
   const featuredTours = tours.slice(0, 3);
@@ -15,6 +16,7 @@ const Home = () => {
       <Hero />
       {/* Featured Packages */}
       <Bienvenida />
+      <Experiencias/>
       <section className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4">
           <h2 className="text-3xl font-bold text-center mb-12">
