@@ -1,45 +1,86 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { packages } from "../data/data";
+import { Star, MapPin, Clock } from "lucide-react";
 
 const Packages = () => {
   return (
-    <div className="py-5 mt-[100px] bg-gray-50 min-h-screen">
+    <section className="pt-5 pb-16 mt-[100px] bg-gradient-to-b from-gray-50 to-white min-h-screen">
       <div className="max-w-7xl mx-auto px-4">
-        <h1 className="text-4xl font-bold text-center mb-4">
+        {/* Encabezado */}
+        <h1 className="text-4xl font-extrabold text-center mb-3 text-black drop-shadow-sm">
           Nuestros Paquetes Turísticos
         </h1>
-        <p className="text-xl text-center text-gray-600 mb-12">
-          Descubre nuestras ofertas especiales para vivir experiencias únicas en
-          el valle del mantaro
+        <p className="text-lg text-center text-gray-600 mb-12 max-w-3xl mx-auto">
+          Descubre experiencias inolvidables y vive lo mejor del Valle del
+          Mantaro con nuestros exclusivos paquetes.
         </p>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {/* Cards */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
           {packages.map((pkg) => (
             <div
               key={pkg.id}
-              className="group bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300"
+              className="group bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden 
+              transition-all duration-500 transform hover:-translate-y-2 hover:shadow-[0_8px_30px_rgba(255,85,34,0.3)]"
             >
-              <img
-                src={pkg.image}
-                alt={pkg.title}
-                className="w-full h-56 object-cover group-hover:scale-110 transition-transform duration-500"
-              />
-              <div className="p-6">
-                <h3 className="text-xl font-bold mb-2">{pkg.title}</h3>
-                <p className="text-gray-600 mb-4">{pkg.description}</p>
+              {/* Imagen con overlay */}
+              <div className="relative overflow-hidden">
+                <img
+                  src={pkg.image}
+                  alt={pkg.title}
+                  className="w-full h-60 object-cover transition-transform duration-700 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <span className="absolute top-3 left-3 bg-[var(--color-primary)] text-white text-xs font-semibold px-3 py-1 rounded-full shadow-md">
+                  Paquete Turístico
+                </span>
+              </div>
 
-                <div className="flex justify-between items-center mb-4">
-                  <span className="text-primary font-bold text-lg">
-                    S/{pkg.price}
-                  </span>
-                  <span className="bg-green-200 text-green-800 text-sm font-medium px-2 py-1 rounded">
-                    {pkg.duration}
+              {/* Contenido */}
+              <div className="p-6 space-y-3">
+                <div className="flex items-center text-gray-500 text-sm">
+                  <MapPin className="w-4 h-4 mr-1 text-[var(--color-secondary)]" />
+                  <span>{pkg.location || "Cusco"}</span>
+                </div>
+
+                <h3 className="text-lg font-semibold text-gray-800 leading-snug group-hover:text-[var(--color-primary)] transition-colors duration-300 line-clamp-2">
+                  {pkg.title}
+                </h3>
+
+                {/* Valoración con estrellas doradas */}
+                <div className="flex items-center text-yellow-400">
+                  {[...Array(5)].map((_, i) => (
+                    <Star
+                      key={i}
+                      size={18}
+                      fill="currentColor"
+                      stroke="none"
+                      className="drop-shadow-[0_0_3px_rgba(255,215,0,0.7)]"
+                    />
+                  ))}
+                  <span className="ml-2 text-sm text-gray-500">
+                    (5.0 reseñas)
                   </span>
                 </div>
+
+                {/* Duración y precio */}
+                <div className="flex justify-between items-center border-t border-gray-100 pt-3">
+                  <div className="flex items-center text-gray-600 text-sm">
+                    <Clock className="w-4 h-4 mr-1 text-[var(--color-secondary)]" />
+                    <span>{pkg.duration}</span>
+                  </div>
+                  <span className="text-[var(--color-primary)] font-bold text-lg">
+                    Desde S/{pkg.price}
+                  </span>
+                </div>
+
+                {/* Botón */}
                 <Link
                   to={`/paquetes/${pkg.id}`}
-                  className="block w-full mx-auto bg-secondary hover:bg-yellow-600 text-white text-center font-medium py-3 px-4 rounded transition-colors duration-300"
+                  className="block w-full mt-4 bg-[var(--color-secondary)] hover:bg-[var(--color-primary)] 
+                  text-white text-center font-medium py-3 rounded-xl transition-all duration-300 
+                  shadow-md hover:shadow-[0_4px_15px_rgba(38,84,124,0.4)]"
                 >
                   Ver Detalles
                 </Link>
@@ -48,7 +89,7 @@ const Packages = () => {
           ))}
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

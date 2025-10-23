@@ -22,7 +22,7 @@ const TourDetail = () => {
 
   return (
     <div className="py-5 mt-[100px] bg-white min-h-screen">
-      <div className="max-w-4xl mx-auto px-4">
+      <div className="max-w-6xl mx-auto px-4">
         <Link
           to="/tours"
           className="text-primary hover:underline mb-4 inline-block"

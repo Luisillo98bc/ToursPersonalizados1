@@ -34,48 +34,61 @@ import mantaro from "../assets/mantaro.jpg"
 export const packages = [
   {
     id: 1,
-    title: "City Tour Huancayo",
+    title: "Tours Valle del Mantaro",
     description: "Descubre lo mejor de la ciudad de Huancayo",
     fullDescription:
       "Este paquete completo te permite explorar los principales atractivos de la ciudad de Huancayo y sus alrededores.",
     price: 60,
-    duration: "3 a 4 horas",
+    duration: "Duración: 8:00 AM a 5:30 PM",
     category: "Cultura y tradicion",
     image: huancayo,
     includes: [
+      "Punto de encuentro: centro de Huancayo.",
       "Transporte durante el tour",
-      "Guía turístico bilingüe",
-      "Entradas a los atractivos",
+      "Guía turístico",
+      "fotos a disposición",
     ],
     itinerary: [
       {
         title: "Parque constitucion",
         description:
-          "Recepción en el terminal, traslado al hotel y recorrido por el centro histórico de huancayo.",
+          "punto de inicio del tour es en la plaza constitucion en el centro de la ciudad de huancayo",
         image: constitucion,
       },
       {
-        title: "Cerrito de la libertad",
+        title: "Orcotuna - La Tierra de los Lechones",
         description:
-          "Visita el cerrito de la liberdad y el Zoologico municipal de Huancayo",
+          "Ubicado en el Valle del Mantaro, Orcotuna es reconocido por su exquisito lechón al horno, símbolo de su tradición gastronómica. Rodeado de hermosos paisajes andinos, este encantador destino combina sabor, cultura y hospitalidad, ofreciendo una experiencia auténtica en el corazón del campo huancaíno.",
         image: cerrito,
       },
       {
-        title: "Torre Torre",
+        title: "Cañón de shutjo",
         description:
-          "Recorre las formaciones naturales con forma de torres con mas 30 metros de altura",
+          "El Cañón de Shutjo, situado en el distrito de Canchayllo, provincia de Jauja, es una maravilla natural formada por la erosión del río Tanta. Destaca por sus imponentes paredes rocosas, aguas turquesas y formaciones únicas, siendo un destino ideal para el ecoturismo, la aventura y la fotografía paisajística.",
         image: torres,
       },
       {
-        title: "Parque de la Identidad Huanca",
+        title: "Los Corivinchos ( último pueblo inca en ser conquistado)",
         description:
-          "Este parque fue construido para rendir homenaje conservar en la memoria a aquellos personajes mas representativos del arte popular huanca, al ingreso del parque resalta el enorme mate burilado representando en el la vivencia del hombre huanca, se encuentra un castillo que representa a la corona de la Virgen de Cocharcas donde los pequeños pueden subir y tomarse las fotos para el recuerdo.",
+          "Ubicado en la provincia de Jauja, Los Corivinchos es un histórico poblado andino reconocido como el último bastión inca en ser conquistado por los españoles. Conserva vestigios arqueológicos, tradiciones ancestrales y una profunda identidad cultural que reflejan el legado del Tahuantinsuyo en el corazón del Valle del Mantaro.",
         image: identidad1,
       },
       {
-        title: "Parque de los Sombreros",
+        title: "Puyas de Raimondi – Canchayllo, Jauja",
         description:
-          "en este parque se resalta los distintos sombreros que han sido realizados al estilo que utilizan las mujeres campesinas de Sicaya, Orcotuna, Chongos, etc.",
+          "En las alturas de Canchayllo se encuentra un impresionante bosque de Puyas de Raimondi, la planta más alta de los Andes y símbolo de la biodiversidad peruana. Este paraje ofrece un paisaje majestuoso donde miles de puyas florecen entre montañas y cielos azules, creando un espectáculo natural único.",
+        image: sombreros,
+      },
+      {
+        title: "Baños termales de acaya",
+        description:
+          "Los Baños Termales de Acaya, ubicados en el distrito de Canchaillo, provincia de Jauja, son conocidos por sus aguas cálidas de origen natural, ricas en minerales con propiedades medicinales. Este atractivo turístico ofrece un entorno tranquilo, ideal para relajarse, disfrutar del paisaje andino y renovar energías.",
+        image: sombreros,
+      },
+      {
+        title: "Laguna de paca",
+        description:
+          "La Laguna de Paca, ubicada a pocos minutos de la ciudad de Jauja, es uno de los atractivos naturales más emblemáticos del Valle del Mantaro. Rodeada de verdes colinas y leyendas locales, ofrece paseos en bote, gastronomía típica y una vista panorámica ideal para la relajación y el turismo ecológico.",
         image: sombreros,
       },
     ],
