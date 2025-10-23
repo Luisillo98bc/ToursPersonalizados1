@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { motion } from "framer-motion";
+import logo from "../assets/logo.png"
 
 const Experiencias = () => {
   // ✅ Cargar script de TikTok solo una vez
@@ -68,9 +69,9 @@ const Experiencias = () => {
               className="group bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-200 hover:shadow-2xl w-full max-w-[400px]"
             >
               <img
-                src="https://scontent-lim1-1.xx.fbcdn.net/v/t39.30808-6/447975673_122197562768006452_6914000207807418798_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=6ee11a&_nc_eui2=AeFNTKfsJCUWLww_qVziDkvz507JqbwOEc7nTsmpvA4RzhW0zBbn0RCtEPprmCwEdclC1WoTWy4aBiDBc8N7gErH&_nc_ohc=U_Mnz1nDmhAQ7kNvwHd7txn&_nc_oc=AdknMW_bTf5Wm8Pt09yHq_3R7rBX9345ixoX-xc1GgiE9XGsFWTVpKlnI30Y1k1w3DU&_nc_zt=23&_nc_ht=scontent-lim1-1.xx&_nc_gid=VvpVirVCZlax3r84YW9G3w&oh=00_Afe2HHKDLqYCFBlM7LzMTJiN5QgMJzEyvimwOWGtSa8fcw&oe=68F97ACD"
+                src={logo}
                 alt="Publicación destacada en Facebook"
-                className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500"
+                className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500 bg-amber-400 "
               />
               <div className="p-5">
                 <h4 className="text-xl font-semibold text-gray-800 mb-2 group-hover:text-primary transition">
@@ -93,7 +94,8 @@ const Experiencias = () => {
           transition={{ duration: 0.6 }}
         >
           <h3 className="text-3xl font-semibold text-gray-700 mb-10">
-            siguenos en <span className="text-primary">TikTok</span> y comparte nuestras experiencias
+            siguenos en <span className="text-primary">TikTok</span> y comparte
+            nuestras experiencias
           </h3>
 
           <div className="grid md:grid-cols-3 gap-6 place-items-center">
@@ -127,9 +129,9 @@ const Experiencias = () => {
               className="group bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-200 hover:shadow-2xl w-full max-w-[350px] cursor-pointer"
             >
               <img
-                src="https://scontent-lim1-1.xx.fbcdn.net/v/t39.30808-6/447975673_122197562768006452_6914000207807418798_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=6ee11a&_nc_eui2=AeFNTKfsJCUWLww_qVziDkvz507JqbwOEc7nTsmpvA4RzhW0zBbn0RCtEPprmCwEdclC1WoTWy4aBiDBc8N7gErH&_nc_ohc=U_Mnz1nDmhAQ7kNvwHd7txn&_nc_oc=AdknMW_bTf5Wm8Pt09yHq_3R7rBX9345ixoX-xc1GgiE9XGsFWTVpKlnI30Y1k1w3DU&_nc_zt=23&_nc_ht=scontent-lim1-1.xx&_nc_gid=VvpVirVCZlax3r84YW9G3w&oh=00_Afe2HHKDLqYCFBlM7LzMTJiN5QgMJzEyvimwOWGtSa8fcw&oe=68F97ACD"
+                src={logo}
                 alt="Video destacado en TikTok"
-                className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500"
+                className="w-full h-64 object-cover group-hover:scale-105 bg-amber-400 transition-transform duration-500"
               />
               <div className="p-5">
                 <h4 className="text-xl font-semibold text-gray-800 mb-2 group-hover:text-primary transition">

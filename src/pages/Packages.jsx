@@ -41,7 +41,7 @@ const Packages = () => {
               <div className="p-6 space-y-3">
                 <div className="flex items-center text-gray-500 text-sm">
                   <MapPin className="w-4 h-4 mr-1 text-[var(--color-secondary)]" />
-                  <span>{pkg.location || "Cusco"}</span>
+                  <span>{pkg.location || "Huancayo - Perú"}</span>
                 </div>
 
                 <h3 className="text-lg font-semibold text-gray-800 leading-snug group-hover:text-[var(--color-primary)] transition-colors duration-300 line-clamp-2">

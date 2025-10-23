@@ -1,7 +1,5 @@
 import React, { useState } from "react";
-import { FaFacebook } from "react-icons/fa";
-import { FaTiktok } from "react-icons/fa6";
-import { BsInstagram } from "react-icons/bs";
+import { FaTiktok, FaFacebookF, FaYoutube, FaInstagram } from "react-icons/fa";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -198,29 +196,29 @@ const Contact = () => {
               </h3>
               <div className="flex space-x-4">
                 <a
-                  href="https://www.facebook.com/profile.php?id=61550193575077"
-                  className="bg-gray-200 hover:bg-primary hover:text-white w-10 h-10 rounded-full flex items-center justify-center transition-colors duration-300"
-                >
-                  <span className="font-bold">
-                    <FaFacebook size={38} />
-                  </span>
-                </a>
-                <a
-                  href="https://www.tiktok.com/@ricardo_perez_l"
-                  className="bg-gray-200 hover:bg-primary hover:text-white w-10 h-10 rounded-full flex items-center justify-center transition-colors duration-300"
-                >
-                  <span className="font-bold">
-                    <FaTiktok size={30} />
-                  </span>
-                </a>
-                <a
-                  href="https://www.facebook.com/profile.php?id=61550193575077"
-                  className="bg-gray-200 hover:bg-primary hover:text-white w-10 h-10 rounded-full flex items-center justify-center transition-colors duration-300"
-                >
-                  <span className="font-bold">
-                    <BsInstagram size={30} />
-                  </span>
-                </a>
+                                    href="https://www.facebook.com/profile.php?id=61550193575077"
+                                    className="text-[#1877F2] hover:scale-110 transition-transform"
+                                  >
+                                    <FaFacebookF size={28} />
+                                  </a>
+                                  <a
+                                    href="https://www.tiktok.com/@ricardo_perez_l"
+                                    className="text-[#000000] hover:scale-110 transition-transform"
+                                  >
+                                    <FaTiktok size={28} />
+                                  </a>
+                                  <a
+                                    href="https://www.youtube.com/@richyperez7505/featured"
+                                    className="text-[#FF0000] hover:scale-110 transition-transform"
+                                  >
+                                    <FaYoutube size={28} />
+                                  </a>
+                                  <a
+                                    href="https://www.instagram.com/ricardoivanperezlaureano/"
+                                    className="text-[#E4405F] hover:scale-110 transition-transform"
+                                  >
+                                    <FaInstagram size={28} />
+                                  </a>
               </div>
             </div>
           </div>

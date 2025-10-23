@@ -200,19 +200,37 @@ const Home = () => {
       </section>
 
       {/* Call to Action */}
-      <section className="py-16 bg-secondary text-white">
-        <div className="max-w-7xl mx-auto px-4 text-center">
-          <h2 className="text-3xl font-bold mb-4">
-            ¿Listo para tu próxima aventura?
-          </h2>
-          <p className="text-xl mb-8">
-            Contáctanos y planifica el viaje de tus sueños
-          </p>
+      <section className="py-12 px-6">
+        <div className="max-w-7xl mx-auto bg-gradient-to-r from-[#1E4976] to-[#958bc0] text-white rounded-3xl shadow-xl p-10 flex flex-col md:flex-row items-center justify-between gap-6">
+          {/* Texto principal */}
+          <div>
+            <h2 className="text-3xl md:text-4xl font-extrabold mb-2">
+              Tu Aventura Personalizada{" "}
+              <span className="text-yellow-300">¡Garantizada!</span> 🚀
+            </h2>
+            <p className="text-lg text-gray-100 max-w-2xl">
+              Reserva tu experiencia ahora. Cuéntanos tu destino y número de
+              viajeros para recibir una cotización inmediata y sin compromiso.
+            </p>
+          </div>
+
+          {/* Botón de acción */}
           <Link
-            to="/contacto"
-            className=" hover:bg-yellow-600 text-white font-bold py-3 px-6 rounded-lg text-lg bg-primary"
+            to="https://wa.me/51914067799" // 👉 reemplaza con tu número real
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-2 bg-[#ff5522] hover:bg-[#e04b1e] text-white font-semibold px-6 py-3 rounded-xl shadow-lg transition-all duration-300 transform hover:scale-105"
           >
-            Contáctanos
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="currentColor"
+              viewBox="0 0 24 24"
+              className="w-6 h-6 text-green-400"
+            >
+              <path d="M16.6 13.9c-.3-.2-1.7-.9-1.9-1s-.4-.2-.6.1-.7 1-.9 1.2-.3.2-.6.1a7.8 7.8 0 0 1-3.7-3.2c-.3-.4 0-.5.2-.7l.5-.6c.2-.2.2-.4 0-.7L8.2 7a.6.6 0 0 0-.8 0 3.2 3.2 0 0 0-1 2.3A5.8 5.8 0 0 0 8.1 15a6.3 6.3 0 0 0 5 2.7 5.2 5.2 0 0 0 2.2-.5 2.4 2.4 0 0 0 1.6-1.5c.2-.4 0-.6-.2-.8z" />
+              <path d="M12 2a10 10 0 0 0-8.5 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.8 15.7a7.7 7.7 0 0 1-10.3 1L5.3 19l.9-2.7a7.7 7.7 0 1 1 11.6 1.4z" />
+            </svg>
+            Reservar Servicio
           </Link>
         </div>
       </section>

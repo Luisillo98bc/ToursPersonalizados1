@@ -12,12 +12,14 @@ import TourDetail from "./pages/TourDetail";
 import PackageDetail from "./pages/PackageDetail";
 //import WhatsAppFloatWithSchedule from "./components/WhatsAppFloatWithSchedule";
 import WhatsAppFloat from "./components/WhatsAppFloat";
+import ScrollToTop from "./components/ScrollToTop";
 //import WhatsAppFloatWithNotification from "./components/WhatsAppFloatWithNotification";
 
 function App() {
   return (
     <Router>
       <div className="App">
+        <ScrollToTop/>
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
@@ -30,7 +32,6 @@ function App() {
           <Route path="/contacto" element={<Contact />} />
         </Routes>
         <Footer />
-
         <WhatsAppFloat />
       </div>
     </Router>

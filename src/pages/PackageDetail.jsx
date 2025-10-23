@@ -1,6 +1,7 @@
 import React from "react";
 import { useParams, Link } from "react-router-dom";
 import { packages } from "../data/data";
+import { MessageCircle } from "lucide-react";
 
 const PackageDetail = () => {
   const { id } = useParams();
@@ -20,21 +21,34 @@ const PackageDetail = () => {
     );
   }
 
+  // 💬 Número de WhatsApp
   const phone = "51914067799";
 
-  const message = encodeURIComponent(
-    `¡Hola! 👋 Estoy interesado en el paquete "${pkg.title}" 🏞️\n\n` +
-      `📅 Duración: ${pkg.duration}\n💰 Precio: S/${pkg.price}\n` +
-      `📍 Categoría: ${pkg.category || "General"}\n\n` +
-      `📝 Descripción: ${pkg.fullDescription}\n\n` +
-      `🔗 Link del paquete: ${window.location.href}\n\n` +
-      `¿Podrías darme más información o ayudarme a reservar? 🙏`
-  );
+  // 🧾 Mensaje con detalles + imagen visible
+  const message = `
+¡Hola! 👋 Estoy interesado en el paquete *${pkg.title}* 🏞️
 
-  const whatsappUrl = `https://wa.me/${phone}?text=${message}`;
+📅 Duración: ${pkg.duration}
+💰 Precio: S/${pkg.price}
+📍 Categoría: ${pkg.category || "General"}
+
+📝 Descripción: ${pkg.fullDescription}
+
+📸 Imagen del paquete:
+${pkg.image}
+
+🔗 Enlace del paquete:
+${window.location.href}
+
+¿Podrías darme más información o ayudarme a reservar? 🙏
+  `;
+
+  const whatsappUrl = `https://wa.me/${phone}?text=${encodeURIComponent(
+    message
+  )}`;
 
   return (
-    <div className="py-5 mt-[100px] bg-gray-50 min-h-screen">
+    <div className="py-5 mt-[100px] bg-gray-50 min-h-screen pb-24">
       <div className="max-w-7xl mx-auto px-4">
         <Link
           to="/paquetes"
@@ -120,7 +134,6 @@ const PackageDetail = () => {
                             }`}
                           ></div>
 
-                          {/* 🔢 Numeración simple sin palabra "Día" */}
                           <h3 className="text-2xl font-bold text-gray-800 mb-2">
                             {index + 1}. {day.title}
                           </h3>
@@ -135,34 +148,29 @@ const PackageDetail = () => {
                 </div>
               </div>
             )}
-
-            <div className="bg-green-50 border border-green-200 p-8 rounded-xl text-center shadow-inner">
-              <h3 className="text-2xl font-bold mb-3 text-gray-800">
-                ¿Te interesa este paquete?
-              </h3>
-              <p className="mb-6 text-gray-700">
-                Contáctanos por WhatsApp para más información o para reservar tu
-                experiencia.
-              </p>
-
-              <a
-                href={whatsappUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-6 rounded-lg transition duration-300"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="currentColor"
-                  viewBox="0 0 24 24"
-                  className="w-6 h-6"
-                >
-                  <path d="M12.04 2C6.52 2 2 6.53 2 12.08c0 1.95.52 3.86 1.5 5.54L2 22l4.54-1.46A10.06 10.06 0 0 0 12.05 22C17.58 22 22 17.47 22 11.93 22 6.4 17.56 2 12.04 2Zm0 18.29c-1.68 0-3.32-.46-4.75-1.33l-.34-.2-2.7.87.88-2.63-.22-.34A8.2 8.2 0 0 1 3.8 12c0-4.56 3.7-8.27 8.25-8.27 4.54 0 8.24 3.7 8.24 8.27 0 4.55-3.7 8.25-8.25 8.25Zm4.71-6.21c-.26-.13-1.54-.76-1.78-.84-.24-.09-.42-.13-.6.13-.17.26-.68.83-.83 1-.15.17-.3.19-.56.06-.26-.13-1.1-.4-2.1-1.28-.78-.69-1.3-1.54-1.45-1.8-.15-.26-.02-.4.11-.53.12-.12.26-.32.39-.48.13-.17.17-.26.26-.43.09-.17.04-.32-.02-.45-.06-.13-.6-1.44-.82-1.97-.21-.5-.42-.43-.6-.43h-.52c-.17 0-.45.06-.68.32-.23.26-.89.86-.89 2.1 0 1.24.9 2.44 1.03 2.61.13.17 1.76 2.7 4.27 3.79.6.26 1.06.42 1.43.54.6.19 1.14.16 1.57.1.48-.07 1.54-.63 1.76-1.25.22-.62.22-1.16.15-1.25-.06-.1-.24-.16-.5-.29Z" />
-                </svg>
-                Contactar por WhatsApp
-              </a>
-            </div>
           </div>
+        </div>
+      </div>
+
+      {/* ✅ Botón flotante inferior */}
+      <div className="fixed bottom-0 left-0 w-full bg-white/95 backdrop-blur-md border-t shadow-lg z-50">
+        <div className="max-w-7xl mx-auto px-4 py-5 flex items-center justify-between">
+          <div className="flex flex-col sm:flex-row sm:items-center gap-2">
+            <span className="text-gray-500 text-md">Desde</span>
+            <span className="text-3xl font-bold text-gray-900">
+              S/{pkg.price}
+            </span>
+            <span className="text-gray-500 text-md">por persona</span>
+          </div>
+
+          <a
+            href={whatsappUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-primary/70 text-xl hover:bg-primary text-white font-bold py-3 px-8 rounded-full transition-all duration-300 shadow-md hover:shadow-lg flex items-center gap-2"
+          >
+            Reservar Ahora
+          </a>
         </div>
       </div>
     </div>

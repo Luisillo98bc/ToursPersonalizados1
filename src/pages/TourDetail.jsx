@@ -20,8 +20,29 @@ const TourDetail = () => {
     );
   }
 
+  // 💬 Número de WhatsApp (reemplázalo por el tuyo con código de país)
+  const phoneNumber = "519"; // Ejemplo Perú: 51 + número
+
+  // 🧾 Mensaje con la información del tour
+  const message = `
+Hola, estoy interesado en reservar el tour *${tour.title}* 🌄
+
+📅 Duración: ${tour.duration}
+💰 Precio: S/${tour.price.toFixed(2)} por persona
+📋 Descripción: ${tour.fullDescription}
+
+Imagen principal: ${tour.image}
+
+¿Podrían darme más información, por favor?
+  `;
+
+  // ✅ Crear el enlace de WhatsApp (codificando el texto)
+  const whatsappLink = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(
+    message
+  )}`;
+
   return (
-    <div className="py-5 mt-[100px] bg-white min-h-screen">
+    <div className="py-5 mt-[100px] bg-white min-h-screen pb-20">
       <div className="max-w-6xl mx-auto px-4">
         <Link
           to="/tours"
@@ -44,7 +65,7 @@ const TourDetail = () => {
                 {tour.duration}
               </span>
               <span className="bg-secondary text-white px-3 py-1 rounded-full text-sm">
-                ${tour.price}
+                S/{tour.price}
               </span>
               {tour.difficulty && (
                 <span className="bg-gray-200 text-gray-800 px-3 py-1 rounded-full text-sm">
@@ -79,22 +100,30 @@ const TourDetail = () => {
                 </ul>
               </div>
             )}
-
-            <div className="bg-gray-50 p-6 rounded-lg">
-              <h3 className="text-xl font-bold mb-4">
-                ¿Te interesa este tour?
-              </h3>
-              <p className="mb-4">
-                Contáctanos para más información o para reservar este tour.
-              </p>
-              <Link
-                to="/contacto"
-                className="inline-block bg-primary hover:bg-green-800 text-white font-bold py-3 px-6 rounded-lg"
-              >
-                Contactar Ahora
-              </Link>
-            </div>
           </div>
+        </div>
+      </div>
+
+      {/* ✅ Barra flotante inferior con botón de WhatsApp */}
+      <div className="fixed bottom-0 left-0 w-full bg-white/95 backdrop-blur-md border-t shadow-lg z-50">
+        <div className="max-w-6xl mx-auto px-4 py-5 flex items-center justify-between">
+          <div className="flex flex-col sm:flex-row sm:items-center gap-2">
+            <span className="text-gray-500 text-md">Desde</span>
+            <span className="text-3xl font-bold text-gray-900">
+              S/{tour.price.toFixed(2)}
+            </span>
+            <span className="text-gray-500 text-md">por persona</span>
+          </div>
+
+          {/* 🔗 Enlace directo a WhatsApp */}
+          <a
+            href={whatsappLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-primary/70 text-xl hover:bg-primary text-white font-bold py-2 px-6 rounded-full transition-all duration-300 shadow-md hover:shadow-lg flex items-center gap-2"
+          >
+            Reservar Ahora
+          </a>
         </div>
       </div>
     </div>
