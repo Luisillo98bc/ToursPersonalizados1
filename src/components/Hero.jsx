@@ -27,15 +27,19 @@ const Hero = () => {
     <div
       className="
         relative
-        w-[94%]
+        w-full
+        px-4
+    
         mx-auto
         mt-[100px]
         rounded-3xl
         overflow-hidden
+        h-[calc(100dvh-100px)]
+        /* 💡 CORRECCIÓN TAILWIND: Usamos h-[...] en lugar de style */
+        /* Restamos 100px (la altura del Header) para que ocupe el resto del viewport */
+        h-[calc(100dvh-100px)] 
       "
-      style={{
-        height: "calc(100dvh - 120px)", // 🔥 Ajuste dinámico exacto
-      }}
+      // Eliminamos el atributo 'style'
     >
       {/* Imagen de fondo */}
       <div
@@ -51,11 +55,13 @@ const Hero = () => {
       {/* Capa oscura */}
       <div className="absolute inset-0 bg-black/40"></div>
 
-      {/* Contenido */}
+      {/* Contenido (Aseguramos que el texto sea responsive) */}
       <div className="relative z-10 flex flex-col items-center justify-center h-full text-center text-white px-4">
+        {/* Tamaños de texto responsive: 4xl (móvil), 5xl (sm), 6xl (md) */}
         <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-3 leading-tight drop-shadow-lg">
           Descubre el valle del Mantaro
         </h1>
+        {/* Tamaños de párrafo responsive: base (móvil), lg (sm), xl (md) */}
         <p className="text-base sm:text-lg md:text-xl max-w-xl mb-8 text-gray-100">
           Experiencias únicas en Junín y a nivel nacional
         </p>
