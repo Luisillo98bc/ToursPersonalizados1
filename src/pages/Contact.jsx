@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { motion } from "framer-motion";
 import { FaTiktok, FaFacebookF, FaYoutube, FaInstagram } from "react-icons/fa";
 
 const Contact = () => {
@@ -12,16 +13,12 @@ const Contact = () => {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData((prevState) => ({
-      ...prevState,
-      [name]: value,
-    }));
+    setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Aquí iría la lógica para enviar el formulario
-    alert("¡Mensaje enviado! Te contactaremos pronto.");
+    alert("✅ ¡Mensaje enviado! Te contactaremos pronto.");
     setFormData({
       name: "",
       email: "",
@@ -32,77 +29,98 @@ const Contact = () => {
   };
 
   return (
-    <div className="py-5 mt-[100px] bg-gray-50 min-h-screen">
-      <div className="max-w-7xl mx-auto px-4">
-        <h1 className="text-4xl font-bold text-center mb-4">Contáctanos</h1>
-        <p className="text-xl text-center text-gray-600 mb-12">
-          Estamos aquí para ayudarte a planificar tu viaje perfecto
-        </p>
+    <div className="pb-16 pt-4 mt-[100px] bg-gradient-to-b from-gray-50 via-white to-gray-100 min-h-screen">
+      <div className="max-w-7xl mx-auto px-6 lg:px-8">
+        {/* Header */}
+        <motion.div
+          initial={{ opacity: 0, y: -40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="text-center mb-12"
+        >
+          <h1 className="text-4xl md:text-5xl font-extrabold text-gray-800 mb-3">
+            Contáctanos
+          </h1>
+          <p className="text-lg text-gray-600">
+            Estamos aquí para ayudarte a planificar tu próxima aventura ✈️
+          </p>
+        </motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-          <div className="lg:col-span-2 bg-white rounded-lg shadow-lg p-8">
-            <h2 className="text-2xl font-bold mb-6">Envíanos un mensaje</h2>
-            <form onSubmit={handleSubmit}>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+        {/* Content */}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
+          {/* Formulario */}
+          <motion.div
+            initial={{ opacity: 0, x: -40 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+            className="lg:col-span-2 bg-white shadow-2xl rounded-2xl p-8 border border-gray-100"
+          >
+            <h2 className="text-2xl font-semibold mb-6 text-gray-800">
+               Envíanos un mensaje
+            </h2>
+
+            <form onSubmit={handleSubmit} className="space-y-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
-                  <label htmlFor="name" className="block text-gray-700 mb-2">
+                  <label className="block text-gray-700 font-medium mb-2">
                     Nombre completo
                   </label>
                   <input
                     type="text"
-                    id="name"
                     name="name"
                     value={formData.name}
                     onChange={handleChange}
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"
                     required
+                    className="w-full border border-gray-300 rounded-xl px-4 py-2.5 focus:ring-2 focus:ring-orange-500 focus:outline-none"
+                    placeholder="Tu nombre"
                   />
                 </div>
+
                 <div>
-                  <label htmlFor="email" className="block text-gray-700 mb-2">
+                  <label className="block text-gray-700 font-medium mb-2">
                     Correo electrónico
                   </label>
                   <input
                     type="email"
-                    id="email"
                     name="email"
                     value={formData.email}
                     onChange={handleChange}
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"
                     required
+                    className="w-full border border-gray-300 rounded-xl px-4 py-2.5 focus:ring-2 focus:ring-orange-500 focus:outline-none"
+                    placeholder="tucorreo@email.com"
                   />
                 </div>
               </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
-                  <label htmlFor="phone" className="block text-gray-700 mb-2">
+                  <label className="block text-gray-700 font-medium mb-2">
                     Teléfono
                   </label>
                   <input
                     type="tel"
-                    id="phone"
                     name="phone"
                     value={formData.phone}
                     onChange={handleChange}
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"
+                    className="w-full border border-gray-300 rounded-xl px-4 py-2.5 focus:ring-2 focus:ring-orange-500 focus:outline-none"
+                    placeholder="+51 999 999 999"
                   />
                 </div>
+
                 <div>
-                  <label htmlFor="subject" className="block text-gray-700 mb-2">
+                  <label className="block text-gray-700 font-medium mb-2">
                     Asunto
                   </label>
                   <select
-                    id="subject"
                     name="subject"
                     value={formData.subject}
                     onChange={handleChange}
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"
                     required
+                    className="w-full border border-gray-300 rounded-xl px-4 py-2.5 focus:ring-2 focus:ring-orange-500 focus:outline-none"
                   >
                     <option value="">Selecciona un asunto</option>
                     <option value="consulta">Consulta general</option>
-                    <option value="reserva">Reserva de tour/paquete</option>
+                    <option value="reserva">Reserva de tour</option>
                     <option value="personalizado">Tour personalizado</option>
                     <option value="grupo">Viaje en grupo</option>
                     <option value="otro">Otro</option>
@@ -110,118 +128,98 @@ const Contact = () => {
                 </div>
               </div>
 
-              <div className="mb-6">
-                <label htmlFor="message" className="block text-gray-700 mb-2">
+              <div>
+                <label className="block text-gray-700 font-medium mb-2">
                   Mensaje
                 </label>
                 <textarea
-                  id="message"
                   name="message"
                   value={formData.message}
                   onChange={handleChange}
                   rows="5"
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"
                   required
+                  className="w-full border border-gray-300 rounded-xl px-4 py-2.5 focus:ring-2 focus:ring-orange-500 focus:outline-none"
+                  placeholder="Escribe tu mensaje aquí..."
                 ></textarea>
               </div>
 
               <button
                 type="submit"
-                className="w-full bg-primary hover:bg-primary hover: border-2 hover:border-black text-white font-bold py-3 px-4 rounded-lg transition-colors duration-300"
+                className="w-full bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white font-bold py-3 rounded-xl transition-all duration-300 shadow-md hover:shadow-lg"
               >
-                Enviar Mensaje
+                Enviar mensaje
               </button>
             </form>
-          </div>
+          </motion.div>
 
-          <div className="bg-white rounded-lg shadow-lg p-8">
-            <h2 className="text-2xl font-bold mb-6">Información de contacto</h2>
+          {/* Información */}
+          <motion.div
+            initial={{ opacity: 0, x: 40 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+            className="bg-white shadow-2xl rounded-2xl p-8 border border-gray-100"
+          >
+            <h2 className="text-2xl font-semibold mb-6 text-gray-800">
+              📍 Información de contacto
+            </h2>
 
-            <div className="space-y-6">
-              <div className="flex items-start">
-                <div className="bg-secondary text-white rounded-full w-10 h-10 flex items-center justify-center mr-4 flex-shrink-0">
-                  📍
-                </div>
-                <div>
-                  <h3 className="font-bold text-lg">Dirección</h3>
-                  <p className="text-gray-700">
-                    Av. Principal 123, Huancayo, Junin, Perú
-                  </p>
-                </div>
+            <div className="space-y-6 text-gray-700">
+              <div>
+                <h3 className="font-semibold text-lg">Dirección</h3>
+                <p>Av. Principal 123, Huancayo, Junín, Perú</p>
               </div>
 
-              <div className="flex items-start">
-                <div className="bg-secondary text-white rounded-full w-10 h-10 flex items-center justify-center mr-4 flex-shrink-0">
-                  📞
-                </div>
-                <div>
-                  <h3 className="font-bold text-lg">Teléfono</h3>
-                  <p className="text-gray-700">+51 963 852 741</p>
-                  <p className="text-gray-700">+51 987 654 321</p>
-                </div>
+              <div>
+                <h3 className="font-semibold text-lg">Teléfonos</h3>
+                <p>+51 963 852 741</p>
+                <p>+51 987 654 321</p>
               </div>
 
-              <div className="flex items-start">
-                <div className="bg-secondary text-white rounded-full w-10 h-10 flex items-center justify-center mr-4 flex-shrink-0">
-                  ✉️
-                </div>
-                <div>
-                  <h3 className="font-bold text-lg">Email</h3>
-                  <p className="text-gray-700">info@ToursPersonalizados.com</p>
-                  <p className="text-gray-700">
-                    reservas@ToursPersonalizados.com
-                  </p>
-                </div>
+              <div>
+                <h3 className="font-semibold text-lg">Correo electrónico</h3>
+                <p>info@ToursPersonalizados.com</p>
+                <p>reservas@ToursPersonalizados.com</p>
               </div>
 
-              <div className="flex items-start">
-                <div className="bg-secondary text-white rounded-full w-10 h-10 flex items-center justify-center mr-4 flex-shrink-0">
-                  🕒
-                </div>
-                <div>
-                  <h3 className="font-bold text-lg">Horario de atención</h3>
-                  <p className="text-gray-700">
-                    Lunes a Viernes: 8:00 am - 6:00 pm
-                  </p>
-                  <p className="text-gray-700">
-                    Sábados y domingos: 07:00 am - 07:00 pm
-                  </p>
-                </div>
+              <div>
+                <h3 className="font-semibold text-lg">Horario de atención</h3>
+                <p>Lunes a Viernes: 8:00 am - 6:00 pm</p>
+                <p>Sábados y Domingos: 7:00 am - 7:00 pm</p>
               </div>
             </div>
 
-            <div className="mt-8">
-              <h3 className="font-bold text-lg mb-4">
+            <div className="mt-10">
+              <h3 className="font-semibold text-lg mb-4">
                 Síguenos en redes sociales
               </h3>
-              <div className="flex space-x-4">
+              <div className="flex space-x-5">
                 <a
-                                    href="https://www.facebook.com/profile.php?id=61550193575077"
-                                    className="text-[#1877F2] hover:scale-110 transition-transform"
-                                  >
-                                    <FaFacebookF size={28} />
-                                  </a>
-                                  <a
-                                    href="https://www.tiktok.com/@ricardo_perez_l"
-                                    className="text-[#000000] hover:scale-110 transition-transform"
-                                  >
-                                    <FaTiktok size={28} />
-                                  </a>
-                                  <a
-                                    href="https://www.youtube.com/@richyperez7505/featured"
-                                    className="text-[#FF0000] hover:scale-110 transition-transform"
-                                  >
-                                    <FaYoutube size={28} />
-                                  </a>
-                                  <a
-                                    href="https://www.instagram.com/ricardoivanperezlaureano/"
-                                    className="text-[#E4405F] hover:scale-110 transition-transform"
-                                  >
-                                    <FaInstagram size={28} />
-                                  </a>
+                  href="https://www.facebook.com/profile.php?id=61550193575077"
+                  className="text-[#1877F2] hover:scale-110 transition-transform"
+                >
+                  <FaFacebookF size={28} />
+                </a>
+                <a
+                  href="https://www.tiktok.com/@ricardo_perez_l"
+                  className="text-black hover:scale-110 transition-transform"
+                >
+                  <FaTiktok size={28} />
+                </a>
+                <a
+                  href="https://www.youtube.com/@richyperez7505/featured"
+                  className="text-[#FF0000] hover:scale-110 transition-transform"
+                >
+                  <FaYoutube size={28} />
+                </a>
+                <a
+                  href="https://www.instagram.com/ricardoivanperezlaureano/"
+                  className="text-[#E4405F] hover:scale-110 transition-transform"
+                >
+                  <FaInstagram size={28} />
+                </a>
               </div>
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </div>

@@ -9,22 +9,21 @@ const PackageDetail = () => {
 
   if (!pkg) {
     return (
-      <div className="py-15 text-center">
-        <h1 className="text-2xl font-bold">Paquete no encontrado</h1>
+      <div className="py-20 text-center">
+        <h1 className="text-3xl font-bold text-gray-800">
+          Paquete no encontrado
+        </h1>
         <Link
           to="/paquetes"
-          className="text-primary hover:underline mt-4 inline-block"
+          className="text-primary hover:underline mt-4 inline-block font-semibold"
         >
-          Volver a paquetes
+          ← Volver a paquetes
         </Link>
       </div>
     );
   }
 
-  // 💬 Número de WhatsApp
   const phone = "51914067799";
-
-  // 🧾 Mensaje con detalles + imagen visible
   const message = `
 ¡Hola! 👋 Estoy interesado en el paquete *${pkg.title}* 🏞️
 
@@ -48,47 +47,49 @@ ${window.location.href}
   )}`;
 
   return (
-    <div className="py-5 mt-[100px] bg-gray-50 min-h-screen pb-24">
+    <div className="py-10 mt-[100px] bg-gradient-to-b from-white to-gray-50 min-h-screen pb-32">
       <div className="max-w-7xl mx-auto px-4">
         <Link
           to="/paquetes"
-          className="text-primary hover:underline mb-4 inline-block"
+          className="text-primary hover:underline mb-6 inline-block font-semibold"
         >
-          &larr; Volver a paquetes
+          ← Volver a paquetes
         </Link>
 
-        <div className="bg-white rounded-2xl shadow-lg overflow-hidden">
+        <div className="bg-white rounded-3xl shadow-xl overflow-hidden border border-gray-100">
+          {/* Imagen principal */}
           <img
             src={pkg.image}
             alt={pkg.title}
-            className="w-full h-96 object-cover"
+            className="w-full h-[450px] object-cover"
           />
 
-          <div className="p-8">
-            <h1 className="text-4xl font-bold mb-4 text-gray-800">
+          <div className="p-8 md:p-10">
+            <h1 className="text-4xl md:text-5xl font-extrabold mb-4 text-gray-800">
               {pkg.title}
             </h1>
 
             <div className="flex flex-wrap gap-3 mb-6">
-              <span className="bg-primary text-white px-3 py-1 rounded-full text-sm">
+              <span className="bg-primary text-white px-4 py-1.5 rounded-full text-sm font-medium shadow-sm">
                 {pkg.duration}
               </span>
-              <span className="bg-secondary text-white px-3 py-1 rounded-full text-sm">
+              <span className="bg-secondary text-white px-4 py-1.5 rounded-full text-sm font-medium shadow-sm">
                 S/{pkg.price}
               </span>
               {pkg.category && (
-                <span className="bg-gray-200 text-gray-800 px-3 py-1 rounded-full text-sm">
+                <span className="bg-gray-200 text-gray-800 px-4 py-1.5 rounded-full text-sm font-medium">
                   {pkg.category}
                 </span>
               )}
             </div>
 
-            <p className="text-gray-700 text-lg leading-relaxed mb-8">
+            <p className="text-gray-700 text-lg leading-relaxed mb-10">
               {pkg.fullDescription}
             </p>
 
+            {/* Incluye */}
             <div className="mb-12">
-              <h2 className="text-2xl font-bold mb-4 text-gray-800">
+              <h2 className="text-2xl font-bold mb-4 text-primary">
                 ✅ Incluye
               </h2>
               <ul className="list-disc pl-6 space-y-2 text-gray-700">
@@ -98,14 +99,15 @@ ${window.location.href}
               </ul>
             </div>
 
+            {/* Itinerario */}
             {pkg.itinerary && (
               <div className="mb-16">
-                <h2 className="text-3xl font-bold mb-10 text-center text-gray-800">
+                <h2 className="text-3xl font-bold mb-10 text-center text-primary">
                   🗓️ Itinerario del viaje
                 </h2>
 
                 <div className="relative">
-                  <div className="absolute left-1/2 transform -translate-x-1/2 w-1 bg-secondary h-full rounded-full hidden md:block"></div>
+                  <div className="absolute left-1/2 transform -translate-x-1/2 w-1 bg-gradient-to-b from-primary to-secondary h-full rounded-full hidden md:block"></div>
 
                   <div className="space-y-16">
                     {pkg.itinerary.map((day, index) => (
@@ -117,6 +119,7 @@ ${window.location.href}
                             : "md:flex-row-reverse"
                         }`}
                       >
+                        {/* Imagen */}
                         <div className="md:w-1/2 w-full">
                           {day.image && (
                             <img
@@ -127,9 +130,10 @@ ${window.location.href}
                           )}
                         </div>
 
-                        <div className="md:w-1/2 w-full bg-primary/20 p-6 border-2 border-primary rounded-2xl shadow-md relative">
+                        {/* Descripción */}
+                        <div className="md:w-1/2 w-full bg-gradient-to-br from-primary/10 to-secondary/10 p-6 border border-primary/30 rounded-2xl shadow-sm relative">
                           <div
-                            className={`hidden md:block absolute top-8 w-5 h-5 bg-primary rounded-full border-4 border-white shadow ${
+                            className={`hidden md:block absolute top-8 w-5 h-5 bg-primary rounded-full border-4 border-white shadow-md ${
                               index % 2 === 0 ? "-left-[42px]" : "-right-[42px]"
                             }`}
                           ></div>
@@ -137,7 +141,6 @@ ${window.location.href}
                           <h3 className="text-2xl font-bold text-gray-800 mb-2">
                             {index + 1}. {day.title}
                           </h3>
-
                           <p className="text-gray-600 leading-relaxed">
                             {day.description}
                           </p>
@@ -152,23 +155,24 @@ ${window.location.href}
         </div>
       </div>
 
-      {/* ✅ Botón flotante inferior */}
-      <div className="fixed bottom-0 left-0 w-full bg-white/95 backdrop-blur-md border-t shadow-lg z-50">
-        <div className="max-w-7xl mx-auto px-4 py-5 flex items-center justify-between">
+      {/* Botón flotante */}
+      <div className="fixed bottom-0 left-0 w-full bg-white/95 backdrop-blur-md border-t border-gray-200 shadow-xl z-50">
+        <div className="max-w-7xl mx-auto px-4 py-5 flex items-center justify-between flex-wrap gap-4">
           <div className="flex flex-col sm:flex-row sm:items-center gap-2">
-            <span className="text-gray-500 text-md">Desde</span>
-            <span className="text-3xl font-bold text-gray-900">
+            <span className="text-gray-600 text-md">Desde</span>
+            <span className="text-3xl font-bold text-primary">
               S/{pkg.price}
             </span>
-            <span className="text-gray-500 text-md">por persona</span>
+            <span className="text-gray-600 text-md">por persona</span>
           </div>
 
           <a
             href={whatsappUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-primary/70 text-xl hover:bg-primary text-white font-bold py-3 px-8 rounded-full transition-all duration-300 shadow-md hover:shadow-lg flex items-center gap-2"
+            className="flex items-center gap-2 bg-gradient-to-r from-primary to-secondary text-white font-semibold py-3 px-8 rounded-full transition-all duration-300 shadow-md hover:shadow-lg hover:scale-[1.03]"
           >
+            <MessageCircle className="w-6 h-6" />
             Reservar Ahora
           </a>
         </div>

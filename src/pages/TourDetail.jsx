@@ -105,7 +105,7 @@ Imagen principal: ${tour.image}
       </div>
 
       {/* ✅ Barra flotante inferior con botón de WhatsApp */}
-      <div className="fixed bottom-0 left-0 w-full bg-white/95 backdrop-blur-md border-t shadow-lg z-50">
+      <div className="fixed bottom-0 left-0 w-full  bg-white/95 backdrop-blur-md border-t shadow-lg z-50">
         <div className="max-w-6xl mx-auto px-4 py-5 flex items-center justify-between">
           <div className="flex flex-col sm:flex-row sm:items-center gap-2">
             <span className="text-gray-500 text-md">Desde</span>
@@ -120,7 +120,7 @@ Imagen principal: ${tour.image}
             href={whatsappLink}
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-primary/70 text-xl hover:bg-primary text-white font-bold py-2 px-6 rounded-full transition-all duration-300 shadow-md hover:shadow-lg flex items-center gap-2"
+            className="flex items-center gap-2 bg-gradient-to-r from-primary to-secondary text-white font-semibold py-3 px-8 rounded-full transition-all duration-300 shadow-md hover:shadow-lg hover:scale-[1.03]"
           >
             Reservar Ahora
           </a>

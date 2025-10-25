@@ -1,14 +1,18 @@
 import React, { useState, useEffect } from "react";
-import img1 from "../assets/cañon.jpg"
+
 import img2 from "../assets/nevado.jpg"
-import img3 from "../assets/paca.jpg"
-import img4 from "../assets/sapallangaportada.jpg"
+import img3 from "../assets/portadas/contiportada.jpg"
+import img4 from "../assets/portadas/neva2.avif"
 import img5 from "../assets/valleportada.jpg"
+import img6 from "../assets/portadas/ocopa t2.jpg"
+import img7 from "../assets/portadas/paca t2.jpeg"
+import img8 from "../assets/portadas/portada 15.avif"
+import img9 from "../assets/portadas/portada 16.jpg"
 
 import { Link } from "react-router-dom";
 
 const Hero = () => {
-  const images = [img1, img2, img5];
+  const images = [img2, img3, img4, img5, img6, img7, img8, img9];
 
   const [currentIndex, setCurrentIndex] = useState(0);
 
