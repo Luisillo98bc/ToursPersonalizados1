@@ -8,7 +8,7 @@ const Bienvenida = () => {
         {/* Imagen con botón de reproducción */}
         <div className="relative w-full md:w-1/2 aspect-video rounded-3xl overflow-hidden shadow-lg">
           <iframe
-            className="w-full h-full"
+            className="w-full h-full "
             src="https://www.youtube.com/embed/rraGZt1zTOw?rel=0&showinfo=0"
             title="Paisajes del Valle del Mantaro | Drone 4K"
             frameBorder="0"

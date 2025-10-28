@@ -71,7 +71,7 @@ const Tours = () => {
     <section className="pt-5 pb-16 mt-[100px] bg-gradient-to-b from-gray-50 to-white min-h-screen relative">
       <div className="max-w-7xl mx-auto px-4">
         {/* Encabezado - Sin cambios */}
-        <h1 className="text-4xl font-extrabold text-center mb-3 text-black drop-shadow-sm">
+        <h1 className="text-4xl md:text-5xl font-extrabold text-center mb-3 text-black drop-shadow-sm">
           Nuestros Tours
         </h1>
         <p className="text-lg text-center text-gray-600 mb-8 max-w-3xl mx-auto">

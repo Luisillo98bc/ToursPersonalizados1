@@ -57,3 +57,28 @@ code {
   --color-primary: #ff5522;
   --color-secondary: #26547c;
 }
+
+:root {
+  --color-primary: #ff5522;
+  --color-secondary: #26547c;
+}
+
+.text-primary {
+  color: var(--color-primary);
+}
+
+.bg-primary {
+  background-color: var(--color-primary);
+}
+
+.border-primary {
+  border-color: var(--color-primary);
+}
+
+.hover\:bg-primary:hover {
+  background-color: var(--color-primary);
+}
+
+.hover\:text-primary:hover {
+  color: var(--color-primary);
+}

@@ -11,7 +11,13 @@ const Home = () => {
   const featuredTours = tours.slice(0, 3);
 
   return (
-    <div>
+    <div
+      className="relative overflow-hidden
+          w-auto sm:w-[96%] md:w-[94%] 
+          mx-auto px-4
+          
+          rounded-none sm:rounded-2xl"
+    >
       {/* Hero Section */}
 
       <Hero />
